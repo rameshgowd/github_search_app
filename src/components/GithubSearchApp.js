@@ -17,7 +17,7 @@ const GithubSearchApp = () => {
     }
 
     let searchProfile = (username) => {
-        let dataUrl = `http://api.github.com/users/${username}?clientId=${clientID}&clientSecret=${clientSecret}`
+        let dataUrl = `https://api.github.com/users/${username}?clientId=${clientID}&clientSecret=${clientSecret}`
         
         Axios.get(dataUrl).then((response)=>{
            setProfile(response.data)
@@ -28,7 +28,7 @@ const GithubSearchApp = () => {
     } 
 
     let searchRepos = (username) => { 
-        let dataUrl = `http://api.github.com/users/${username}/repos?clientId=${clientID}&clientSecret=${clientSecret}`
+        let dataUrl = `https://api.github.com/users/${username}/repos?clientId=${clientID}&clientSecret=${clientSecret}`
         
         Axios.get(dataUrl).then((response)=>{ setRepos(response.data)})
         .catch((err)=>{console.log(err)})
